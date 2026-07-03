@@ -124,3 +124,9 @@ reviewForm.addEventListener("submit", function (e) {
     ratingInput.value = "";
     commentInput.value = "";
 });
+const banner = document.getElementById("banner");
+const bannerText = document.getElementById("banner-text");
+
+banner.addEventListener("click", function () {
+    bannerText.classList.toggle("show");
+});
