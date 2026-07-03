@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saimo Hotel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"
+</head> 
+<body>
+
+
+<header>
+  <div class="header-left">
+    <div class="header-logo">🏨</div>
+    <div class="header-titles">
+      <h1>Saimo Hotel</h1>
+      <p>Fine Dining &amp; Hospitality</p>
+    </div>
+  </div>
+  <div class="header-nav">
+    <a href="#menu" class="nav-btn">Menu</a>
+    <a href="#restaurant-info" class="nav-btn">About</a>
+    <a href="#review-form" class="ri-btn primary">Book a Table</a>
+  </div>
+</header>
+
+<div class="page">
+
+
+  <div class="section-heading">
+    <div>
+      <h2>Our Signature Dishes</h2>
+      <p>Click a dish to see its rating and details</p>
+    </div>
+  </div>
+
+ 
+  <div id="menu">
+    <div class="menu-item-wrap">
+      <img src="submission/img food/images no 1 Tilapia.jpg.jpeg" alt="Grilled Tilapia">
+      <span class="menu-item-label">Grilled Tilapia</span>
+    </div>
+    <div class="menu-item-wrap">
+      <img src="submission/img food/image 2 beef stew.jpg.jpeg" alt="Beef Stew">
+      <span class="menu-item-label">Beef Stew</span>
+    </div>
+    <div class="menu-item-wrap">
+      <img src="submission/img food/pilau ricw.jpg.jpeg" alt="Pilau Rice">
+      <span class="menu-item-label">Pilau Rice</span>
+    </div>
+    <div class="menu-item-wrap">
+      <img src="submission/img food/image 3 nyama choma.jpg.jpeg" alt="Nyama Choma">
+      <span class="menu-item-label">Nyama Choma</span>
+    </div>
+    <div class="menu-item-wrap">
+      <img src="submission/img food/Chapo beans.jpg.jpeg" alt="Chapati &amp; Beans">
+      <span class="menu-item-label">Chapati &amp; Beans</span>
+    </div>
+  </div>
+
+ 
+  <div id="dish-detail">
+    <img class="detail-image" id="detail-image" src="submission\img food\nyama choma main.jpg.jpeg" alt="Dish image">
+    <div class="detail-body">
+      <h2 class="detail-name" id="detail-name">Nyama Choma</h2>
+      <h3 class="detail-restaurant" id="detail-restaurant">Saimo Hotel Kitchen</h3>
+
+      <div class="rating-section">
+        <div class="rating-label">Guest Rating</div>
+        <div class="rating-score">
+          <span class="number" id="Rating-display">10</span>
+          <span class="denom">/ 10</span>
+        </div>
+        <div class="stars-row">⭐⭐⭐⭐⭐</div>
+        <div class="comment-label">Guest Review</div>
+        <p id="Comment-display">The best one ever</p>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="restaurant-info" id="restaurant-info">
+    <div class="ri-hero">
+      <div class="ri-hero-pattern"></div>
+      <div class="ri-hero-fade"></div>
+      <div class="ri-hero-content">
+        <div class="ri-badge">⭐ 4-Star Hotel · Est. 2024</div>
+        <div class="ri-name">Saimo Hotel</div>
+        <div class="ri-cuisine">Fine Dining · Baringo, Kenya</div>
+      </div>
+    </div>
+
+    <div class="ri-body">
+      <div class="ri-chips">
+        <span class="ri-chip open">⬤ Open now · Closes 11 PM</span>
+        <span class="ri-chip">📍 Baringo.Kabarnet</span>
+        <span class="ri-chip">🍽️ Dine-in &amp; Room Service</span>
+        <span class="ri-chip">📅 Reservations</span>
+      </div>
+
+      <div class="ri-row">
+        <span class="icon">📍</span>
+        <span class="val"><strong>Saimo Hotel</strong>, Baringo Kabarnet
+            , Kenya</span>
+      </div>
+      <div class="ri-row">
+        <span class="icon">📞</span>
+        <span class="val"><a href="tel:0768888165">0768 888 165</a></span>
+      </div>
+      <div class="ri-row">
+        <span class="icon">✉️</span>
+        <span class="val"><a href="mailto:dining@saimohotel.co.ke">dining@saimohotel.co.ke</a></span>
+      </div>
+      <div class="ri-row">
+        <span class="icon">🌐</span>
+        <span class="val"><a href="#">www.saimohotel.co.ke</a></span>
+      </div>
+
+      <button class="hours-toggle" onclick="toggleHours(this)">
+        <span> Restaurant Hours</span><span id="hchev">▾</span>
+      </button>
+      <div class="hours-block" id="hours-block">
+        <div class="h-row"><span>Breakfast</span><span class="t">6:30 AM – 10:00 AM</span></div>
+        <div class="h-row"><span>Lunch</span><span class="t">12:00 PM – 3:00 PM</span></div>
+        <div class="h-row today"><span>Dinner ●</span><span class="t">6:30 PM – 11:00 PM</span></div>
+        <div class="h-row"><span>Room Service</span><span class="t">24 hours</span></div>
+      </div>
+
+      <div class="ri-amenities">
+        <span class="ri-amenity">📶 Free Wi-Fi</span>
+        <span class="ri-amenity">🅿️ Valet Parking</span>
+        <span class="ri-amenity">♿ Accessible</span>
+        <span class="ri-amenity">🍷 Full Bar</span>
+        <span class="ri-amenity">🎵 Live Music</span>
+        <span class="ri-amenity">🌱 Vegan Menu</span>
+        <span class="ri-amenity">🏊 Board Room</span>
+      </div>
+      <div class="form-section">
+    <h4 class="form-heading">🍽️ Book a Table</h4>
+
+    <form id="booking-form">
+        <input type="text" id="customer-name" placeholder="Full Name" required>
+        <input type="tel" id="customer-phone" placeholder="Phone Number" required>
+        <input type="email" id="customer-email" placeholder="Email Address" required>
+        <input type="date" id="booking-date" required>
+        <input type="time" id="booking-time" required>
+        <input type="number" id="guests" min="1" max="20"placeholder="Number of Guests" required>
+        <button type="submit">Reserve Table</button>
+    </form>
+
+    <div id="booking-message"></div>
+</div>
+
+      <div class="ri-actions">
+        <a href="#booking-form" class="ri-btn primary">Book a Table</a>
+        <a href="#menu" class="ri-btn">View Menu</a>
+        <a href="https://maps.app.goo.gl/6u6UY4aj45T5SBoG7" target="_blank" rel="noopener" class="ri-btn">Directions</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-section">
+    <h4 class="form-heading">✍️ Rate a Dish</h4>
+    <form id="review-form">
+      <input type="text"   id="new-name"       placeholder="Dish Name"         required>
+      <input type="number" id="new-rating"     min="1" max="10" placeholder="Rating (1-10)" required>
+      <input type="text"   id="new-comment"    placeholder="Your review"        required>
+      <button type="submit">Submit Rating</button>
+    </form>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2025 Saimo Hotel · Fine Dining &amp; Hospitality · Baringo, Kenya
+</footer>
+
+
+<script>
+  function toggleHours(btn) {
+    const block = document.getElementById('hours-block');
+    const chev  = document.getElementById('hchev');
+    block.classList.toggle('open');
+    chev.textContent = block.classList.contains('open') ? '▴' : '▾';
+  }
+
+  document.querySelectorAll('#menu img').forEach(img => {
+    img.addEventListener('click', () => {
+      document.querySelectorAll('#menu img').forEach(i => i.classList.remove('active'));
+      img.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
