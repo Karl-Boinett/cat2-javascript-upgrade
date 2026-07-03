@@ -70,3 +70,42 @@ if (addButton && favoriteInput && favoriteList) {
     });
 
 }
+// ===== FORM HANDLING WITH VALIDATION FEEDBACK =====
+
+const reviewForm = document.getElementById("review-form");
+
+const nameInput = document.getElementById("new-name");
+const ratingInput = document.getElementById("new-rating");
+const commentInput = document.getElementById("new-comment");
+
+reviewForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = nameInput.value.trim();
+    const rating = Number(ratingInput.value);
+    const comment = commentInput.value.trim();
+
+    // validation rules
+    if (name === "" || comment === "") {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    if (rating < 1 || rating > 10) {
+        alert("Rating must be between 1 and 10.");
+        return;
+    }
+
+    // success feedback (VISIBLE on page)
+    const message = document.createElement("p");
+    message.textContent = `✅ Thanks! You rated ${name} a ${rating}/10`;
+    message.style.color = "green";
+    message.style.fontWeight = "bold";
+
+    reviewForm.appendChild(message);
+
+    // clear inputs
+    nameInput.value = "";
+    ratingInput.value = "";
+    commentInput.value = "";
+});
