@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css"
+ <link rel="stylesheet" href="css/style.css">
 </head> 
 <body>
 
@@ -162,7 +162,15 @@
     </div>
   </div>
 
+<div class="form-section">
+    <h4>Add a Favorite Dish</h4>
 
+    <input type="text" id="favorite-input" placeholder="Enter favorite dish">
+
+    <button id="add-favorite">Add</button>
+
+    <ul id="favorite-list"></ul>
+</div>
   <div class="form-section">
     <h4 class="form-heading">✍️ Rate a Dish</h4>
     <form id="review-form">
@@ -180,20 +188,25 @@
 </footer>
 
 
-<script>
-  function toggleHours(btn) {
-    const block = document.getElementById('hours-block');
-    const chev  = document.getElementById('hchev');
-    block.classList.toggle('open');
-    chev.textContent = block.classList.contains('open') ? '▴' : '▾';
-  }
+<script src="submission/js/script.js"></script>
 
-  document.querySelectorAll('#menu img').forEach(img => {
-    img.addEventListener('click', () => {
-      document.querySelectorAll('#menu img').forEach(i => i.classList.remove('active'));
-      img.classList.add('active');
+<script src="submission/js/script.js"></script>
+
+<script>
+function toggleHours() {
+    const block = document.getElementById("hours-block");
+    const chev = document.getElementById("hchev");
+
+    block.classList.toggle("open");
+    chev.textContent = block.classList.contains("open") ? "▴" : "▾";
+}
+
+document.querySelectorAll("#menu img").forEach(img => {
+    img.addEventListener("click", () => {
+        document.querySelectorAll("#menu img").forEach(i => i.classList.remove("active"));
+        img.classList.add("active");
     });
-  });
+});
 </script>
 
 </body>

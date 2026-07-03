@@ -31,27 +31,42 @@ const menuItems = [
     }
 ];
 
-const menu = document.getElementById("menu");
 
-menuItems.forEach((item) => {
+/// Add & Remove Favorite Dishes
 
-    const card = document.createElement("div");
-    card.className = "menu-item-wrap";
+const addButton = document.getElementById("add-favorite");
+const favoriteInput = document.getElementById("favorite-input");
+const favoriteList = document.getElementById("favorite-list");
 
-    card.innerHTML = `
-        <img src="${item.image}" alt="${item.name}">
-        <span class="menu-item-label">${item.name}</span>
-    `;
+if (addButton && favoriteInput && favoriteList) {
 
-    card.addEventListener("click", () => {
+    addButton.addEventListener("click", function () {
 
-        document.getElementById("detail-image").src = item.image;
-        document.getElementById("detail-name").textContent = item.name;
-        document.getElementById("Rating-display").textContent = item.rating;
-        document.getElementById("Comment-display").textContent = item.comment;
+        const dish = favoriteInput.value.trim();
 
+        if (dish === "") {
+            alert("Please enter a dish name.");
+            return;
+        }
+
+        const li = document.createElement("li");
+
+        const text = document.createTextNode(dish + " ");
+
+        const removeBtn = document.createElement("button");
+        removeBtn.type = "button";
+        removeBtn.textContent = "Remove";
+
+        removeBtn.onclick = function () {
+            li.remove();
+        };
+
+        li.appendChild(text);
+        li.appendChild(removeBtn);
+
+        favoriteList.appendChild(li);
+
+        favoriteInput.value = "";
     });
 
-    menu.appendChild(card);
-
-});
+}
