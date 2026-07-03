@@ -32,44 +32,59 @@ const menuItems = [
 ];
 
 
-/// Add & Remove Favorite Dishes
-
 const addButton = document.getElementById("add-favorite");
 const favoriteInput = document.getElementById("favorite-input");
 const favoriteList = document.getElementById("favorite-list");
 
-if (addButton && favoriteInput && favoriteList) {
+// Load saved items from localStorage
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-    addButton.addEventListener("click", function () {
+// Render saved items on page load
+function renderFavorites() {
+    favoriteList.innerHTML = "";
 
-        const dish = favoriteInput.value.trim();
-
-        if (dish === "") {
-            alert("Please enter a dish name.");
-            return;
-        }
-
+    favorites.forEach((dish, index) => {
         const li = document.createElement("li");
 
         const text = document.createTextNode(dish + " ");
 
         const removeBtn = document.createElement("button");
-        removeBtn.type = "button";
         removeBtn.textContent = "Remove";
+        removeBtn.type = "button";
 
-        removeBtn.onclick = function () {
-            li.remove();
-        };
+        removeBtn.addEventListener("click", function () {
+            favorites.splice(index, 1);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            renderFavorites();
+        });
 
         li.appendChild(text);
         li.appendChild(removeBtn);
-
         favoriteList.appendChild(li);
-
-        favoriteInput.value = "";
     });
-
 }
+
+// Initial render
+renderFavorites();
+
+// Add new item
+addButton.addEventListener("click", function () {
+
+    const dish = favoriteInput.value.trim();
+
+    if (dish === "") {
+        alert("Please enter a dish name.");
+        return;
+    }
+
+    favorites.push(dish);
+
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+
+    favoriteInput.value = "";
+
+    renderFavorites();
+});
 // ===== FORM HANDLING WITH VALIDATION FEEDBACK =====
 
 const reviewForm = document.getElementById("review-form");
